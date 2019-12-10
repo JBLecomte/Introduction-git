@@ -1,0 +1,67 @@
+---
+title: "Git and Github introduction"
+author: "Jean-Baptiste Lecomte"
+date: "12 décembre 2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## What is version control
+
+
+<center><img src="Figures/motivation1.png" height="400px" /></center>
+
+
+## What is version control
+
+- If you are making copies of projects and renaming them so that you can make some modifications, you should be using version control.
+
+- If you are taking somebody’s changes to their project and manually changing your slightly-different project to include the newest changes, you should be using version control.
+
+- If you want to try something new (no matter how silly) with your code but don’t want to risk breaking your project, you should be using version control.
+
+
+## Git
+
+- Git is a distributed version control system. It was originally designed for Linux kernel developers in 2005.
+- No server required, but in team projects a master repository is used on a server, we will be using GitHub.com, but there are others.
+- If you want information about changes to the repository, or commit logs, it is all stored locally and no internet connection is required.
+
+## GitHub
+
+- This is where hosting services like GitHub, Bitbucket, and GitLab come in.
+- They provide a home for your Git-based projects on the internet. If you have no idea what I’m talking about, think of it as DropBox but much, much better.
+- It allows other people to see your stuff, sync up with you, and perhaps even make changes. These hosting providers improve upon traditional Unix Git servers with well-designed web-based interfaces.
+
+
+
+## Setup git
+- Get a github account.
+- Download and install git.
+
+- Set up git with your user name and email. Open a terminal/shell and type:
+
+```{r, eval=FALSE, echo = TRUE}
+    git config --global user.name "Your name here"
+    git config --global user.email "your_email@example.com"
+```
+
+More info about setting git on your computer:
+<https://kbroman.org/github_tutorial/pages/first_time.html>
+
+## Clone git project
+```{r, eval=FALSE, echo = TRUE}
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+```
+
+
+## Create a local Git repository
+Go to your directory and open a shell
+```{r, eval=FALSE, echo = TRUE}
+git init
+git remote add origin git@github.com:JBLecomte/Introduction-git.git
+git push -u origin master
+```
