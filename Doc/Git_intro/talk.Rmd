@@ -202,6 +202,17 @@ git commit --amend -m "New commit message"
 ```
 Or leave off the -m "New commit message" and type the message in the text editor that opens.
 
+## Undo a commit and redo (before pushing)
+
+```{r, eval=FALSE, echo = TRUE}
+git add make_plot.R  
+git commit -m "Something terribly misguided"             # (1)
+git reset HEAD~                                          # (2)
+<< edit make_plot.R file as necessary >>                 # (3)
+git add make_plot.R                                      # (4)
+git commit -c ORIG_HEAD                                  # (5)
+```
+
 ## Branch
 
 <center><img src="Figures/branch1.png" height="400px" /></center>
@@ -291,5 +302,26 @@ Shows you all the stashes you have stored. Go away and do some other work, and t
 git stash apply
 ```
 
+## Contribute to someone repo
 
+<http://kbroman.org/github_tutorial/pages/fork.html>
 
+## Handling merge conflicts 
+
+When you and your friend make changes to the same file at the same time
+```{r, eval=FALSE, echo = TRUE}
+git pull myfriend master
+```
+
+You’ll get a message like
+```{r, eval=FALSE, echo = TRUE}
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+## online ressource
+- Gui <https://www.gitkraken.com/>
+- Rstudio and Github course : <https://rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/>
+- Online free book for using R and Git <https://happygitwithr.com/>
+- Nice tutorial for the basics <http://kbroman.org/github_tutorial/>
