@@ -15,7 +15,7 @@ nYear <- length(levels(df_data$Year_fac))
 nObs_t <- table(df_data$YeaB_fac)
 
 ## Simulation of a number of fish with a depth effect, Temperature, and Area
-Depth_effect <- - 0.7
+Depth_effect <- - 0.9
 Temperature_effect <- 0.5
 AREA_effect <- c(0, 2)
 Year_effect <- sort(rnorm(nYear, 0, 0.5))
